@@ -1,13 +1,26 @@
 <div class="d-flex flex-column align-items-center my-2">Login</div>
-<form class="form d-grid gap-2">
+<form class="form d-grid gap-2" (ngSubmit)="login()">
   <div class="form-group">
-    <input class="form-control" placeholder="Nome do usuário" />
+    <input
+    class="form-control"
+    placeholder="Nome do usuário"
+    [(ngModel)]="userName"
+    name="userName"
+    />
   </div>
+  <app-message class="text-danger" [message]="'Nome obrigatório!'"></app-message>
   <div class="form-group">
-    <input class="form-control" type="password" placeholder="Nome do usuário" />
+    <input
+    class="form-control"
+    type="password"
+    placeholder="Senha"
+    [(ngModel)]="password"
+    name="password"
+    />
   </div>
+  <app-message class="text-danger" [message]="'Senha obrigatória!'"></app-message>
   <div class="d-flex justify-content-between">
-    <button class="btn btn-secondary">Registrar</button>
-    <button class="btn btn-primary" type="submit">Login</button>
+    <button class="btn btn-secondary" type="button">Registrar</button>
+    <button class="btn btn-primary" type="submit">Entrar</button>
   </div>
 </form>
