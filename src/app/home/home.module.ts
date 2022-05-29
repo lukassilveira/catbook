@@ -6,13 +6,15 @@ import { HomeComponent } from './home.component';
 import { LoginComponent } from './login/login.component';
 import { FormsModule } from '@angular/forms';
 import { MessageComponent } from './message/message.component';
+import { RegisterComponent } from './register/register.component';
 
 
 @NgModule({
   declarations: [
     HomeComponent,
     LoginComponent,
-    MessageComponent
+    MessageComponent,
+    RegisterComponent
   ],
   imports: [
     CommonModule,
