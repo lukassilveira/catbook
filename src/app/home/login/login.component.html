@@ -1,6 +1,38 @@
-<div class="d-flex flex-column align-items-center h2">Login</div>
-<form class="form">
+<div class="d-flex flex-column align-items-center my-2">Login</div>
+<form class="d-grid gap-2" (ngSubmit)="login()" #loginForm="ngForm">
   <div class="form-group">
-    <input type="text" />
+    <input
+      class="form-control"
+      placeholder="Nome do usuário"
+      [(ngModel)]="userName"
+      name="userName"
+      #userNameField="ngModel"
+      required
+    />
+  </div>
+  <app-message
+    *ngIf="userNameField.invalid && userNameField.touched"
+    class="text-danger mb-1"
+    [message]="'Nome obrigatório!'"
+  ></app-message>
+  <div class="form-group">
+    <input
+      class="form-control"
+      type="password"
+      placeholder="Senha"
+      [(ngModel)]="password"
+      name="password"
+      #passwordField="ngModel"
+      required
+    />
+  </div>
+  <app-message
+    *ngIf="passwordField.invalid && passwordField.touched"
+    class="text-danger"
+    [message]="'Senha obrigatória!'"
+  ></app-message>
+  <div class="d-flex justify-content-between">
+    <button class="btn btn-secondary" type="button" routerLink="register">Registrar</button>
+    <button class="btn btn-primary" type="submit" [disabled]="loginForm.invalid">Entrar</button>
   </div>
 </form>
