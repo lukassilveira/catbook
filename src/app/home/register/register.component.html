@@ -1,8 +1,35 @@
 <div class="d-flex flex-column align-items-center my-2">Registrar</div>
 <form>
   <div class="form-group d-grid gap-2">
-    <input class="form-control" placeholder="Insira o nome de usuário" type="text" />
-    <input class="form-control" placeholder="Insira a senha" type="password" />
-    <input class="form-control" placeholder="Confirme sua senha" type="password" />
+    <div class="form-group">
+      <input name="hidden" type="text" style="display: none" />
+      <input
+        class="form-control"
+        placeholder="Insira o nome de usuário"
+        type="text"
+      />
+    </div>
+    <div class="form-group">
+      <input
+        class="form-control"
+        placeholder="Insira a senha"
+        type="password"
+      />
+    </div>
+    <div class="form-group">
+      <input
+        class="form-control"
+        placeholder="Confirme sua senha"
+        type="password"
+      />
+    </div>
+    <div class="d-flex justify-content-between">
+      <button class="btn btn-secondary" type="button" [routerLink]="['']">
+        <span>Voltar</span>
+      </button>
+      <button class="btn btn-primary" type="submit">
+        <span>Confirmar Registro</span>
+      </button>
+    </div>
   </div>
 </form>
